@@ -1,37 +1,36 @@
 print("Usman Fawad, \n18B-069-CS(A), \nQ-05")
-#ONLY OPERATING WHEN DIMENSIONS=5*5
-#TO BE CONTINUED
-def shape():
-    for hor_line in range(6):
+
+def square(lenght):
+    for hor_line in range(lenght):
         print("*",end=' ')
-    for m in range(6):
-        if m==0:
+    for ver_line in range(lenght):
+        if ver_line==0:
             print('')
+        elif ver_line>0 and ver_line<lenght-1:
+            print("*"," "*(lenght),"*")
+    print("* "*lenght)
 
-    for b in range(6):
-        m=4
-        n=2
-
-        if b>1 and b<3:
-            print("* "+ "+ "*m+"*")
-        elif b >=3 and b<5:
-            print("* + "+" "*n+"  + *")
-        elif b==5:
-            print("* "+ "+ "*m+"*")
-    for h in range(6):
+def rectangle(lenght,breadth):
+    for hor_line in range(breadth):
         print("*",end=' ')
+    for ver_line in range(lenght):
+        if ver_line==0:
+            print('')
+        elif ver_line>0 and ver_line<lenght-1:
+            if breadth>lenght:
+                print("*"," "*(breadth+1),"*")
+            elif breadth<lenght:
+                print("*"," "*(breadth),"*")
+    print("* "*breadth)
+        
 
-'''shape_user= input("Enter your desired shape i.e 's' if square and 'r' if rectangle: ")
-
-if shape_user== 's':
-    dim_sq= int(input("Please enter the dimension of Square: "))
-    x= dim_sq
-    shape(x)
-elif shape_user=='S':
-    shape_user.lower()
-    dim_sq=int(input("Please enter the dimension of Square: "))
-    x= dim_sq'''
-shape()
+x=int(input("Enter dimensions of square: "))
+print(u"\u25A0 "*x)
+square(x)
+x1=int(input("Enter lenght of rectangle:  "))
+x2=int(input("Enter breadth of rectangle: "))
+print(u"\u25A0 "*x2)
+rectangle(x1,x2)
 
 
 
